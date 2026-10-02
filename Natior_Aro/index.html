@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natior'Aro — Association d'agroécologie</title>
+<meta name="description" content="Natior'Aro, association d'agroécologie à Madagascar : protéger la nature, cultiver l'avenir.">
+<link rel="icon" href="assets/logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  (function(){
+    var saved = localStorage.getItem('natioraro-theme');
+    if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  })();
+</script>
+</head>
+<body>
+
+<canvas id="leaf-canvas"></canvas>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#accueil" class="brand">
+      <img src="assets/logo.jpeg" alt="Logo Natior'Aro" class="brand-logo">
+      <span class="brand-name">Natior'Aro</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#accueil">Accueil</a>
+      <a href="#apropos">À propos</a>
+      <a href="#activites">Activités</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#partenariats">Partenariats</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Nous rejoindre</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+      <svg class="icon-sun" viewBox="0 0 24 24" width="19" height="19"><path fill="currentColor" d="M12 4a1 1 0 0 1-1-1V1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1Zm0 20a1 1 0 0 1-1-1v-2a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1ZM4 13H2a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2Zm18 0h-2a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2ZM5.64 6.34a1 1 0 0 1-1.41 0L2.8 4.93a1 1 0 1 1 1.41-1.41l1.42 1.41a1 1 0 0 1 0 1.41Zm14.02 14.02a1 1 0 0 1-1.41 0l-1.42-1.41a1 1 0 1 1 1.41-1.41l1.42 1.41a1 1 0 0 1 0 1.41ZM5.64 17.66a1 1 0 0 1 0 1.41L4.22 20.5a1 1 0 1 1-1.41-1.42l1.41-1.41a1 1 0 0 1 1.42 0Zm14.02-14.02a1 1 0 0 1 0 1.41l-1.42 1.42a1 1 0 1 1-1.41-1.42l1.41-1.41a1 1 0 0 1 1.42 0ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" width="19" height="19"><path fill="currentColor" d="M21.64 13.65a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.14 8.05 8.05 0 0 1 .73-3.37 1 1 0 0 0-1.31-1.31A10.14 10.14 0 1 0 22.95 14.7a1 1 0 0 0-1.31-1.05Z"/></svg>
+    </button>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="accueil">
+  <div class="hero-furrows" aria-hidden="true">
+    <svg viewBox="0 0 1440 220" preserveAspectRatio="none">
+      <path d="M0,120 C 240,60 480,180 720,110 C 960,40 1200,160 1440,100 L1440,220 L0,220 Z" class="furrow furrow-1"/>
+      <path d="M0,150 C 240,100 480,200 720,150 C 960,100 1200,190 1440,150 L1440,220 L0,220 Z" class="furrow furrow-2"/>
+      <path d="M0,180 C 240,150 480,210 720,180 C 960,150 1200,210 1440,180 L1440,220 L0,220 Z" class="furrow furrow-3"/>
+    </svg>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-text reveal">
+      <span class="eyebrow">🌾 Association d'agroécologie · Madagascar</span>
+      <h1 class="hero-title">L'agroécologie :<br><em>l'humain au cœur</em><br>du développement</h1>
+      <p class="hero-desc">
+        Natior'Aro accompagne les communautés, les producteurs et les acteurs du développement
+        rural à Madagascar dans la recherche et la mise en œuvre de solutions adaptées, durables
+        et porteuses d'améliorations concrètes — en harmonie avec la nature.
+      </p>
+      <div class="hero-actions">
+        <a href="#activites" class="btn btn-primary">Découvrir nos actions</a>
+        <a href="#contact" class="btn btn-outline">Nous rejoindre</a>
+      </div>
+    </div>
+
+    <div class="hero-logo-wrap reveal">
+      <div class="logo-halo"></div>
+      <div class="logo-card">
+        <img src="assets/logo.jpeg" alt="Logo Natior'Aro" class="logo-big">
+      </div>
+      <span class="leaf-float leaf-1">🌿</span>
+      <span class="leaf-float leaf-2">🌾</span>
+      <span class="leaf-float leaf-3">🍃</span>
+    </div>
+  </div>
+</section>
+
+<div class="leaf-strip" aria-hidden="true">
+  <div class="leaf-strip-track">
+    <span>🌿</span><span>🌾</span><span>🍃</span><span>🌱</span><span>🌳</span><span>🌾</span><span>🍃</span><span>🌱</span>
+    <span>🌿</span><span>🌾</span><span>🍃</span><span>🌱</span><span>🌳</span><span>🌾</span><span>🍃</span><span>🌱</span>
+    <span>🌿</span><span>🌾</span><span>🍃</span><span>🌱</span><span>🌳</span><span>🌾</span><span>🍃</span><span>🌱</span>
+    <span>🌿</span><span>🌾</span><span>🍃</span><span>🌱</span><span>🌳</span><span>🌾</span><span>🍃</span><span>🌱</span>
+  </div>
+</div>
+
+<!-- ===================== A PROPOS ===================== -->
+<section class="section" id="apropos">
+  <div class="section-inner">
+    <span class="section-tag">🌱 À propos</span>
+    <h2 class="section-title">Notre mission &amp; nos objectifs</h2>
+    <div class="growth-divider reveal" aria-hidden="true"><span></span></div>
+
+    <blockquote class="mission-quote reveal">
+      « Apprendre, expérimenter, accompagner et construire avec les acteurs locaux. »
+    </blockquote>
+
+    <div class="apropos-grid">
+      <div class="apropos-text reveal">
+        <h3 class="apropos-subtitle">Qui sommes-nous ?</h3>
+        <p>
+          <strong>Natior'Aro</strong> est une association de droit malagasy créée le <strong>1<sup>er</sup> juillet 2026</strong>
+          par dix (10) membres fondateurs. Nous mettons nos expériences, compétences et engagement au service
+          d'un développement rural durable et résilient à Madagascar.
+        </p>
+        <p>
+          L'humain, l'agriculture et la préservation des ressources naturelles sont au cœur de notre action,
+          avec l'agroécologie comme fil conducteur.
+        </p>
+
+        <h3 class="apropos-subtitle">Pourquoi Natior'Aro ?</h3>
+        <ul class="objectifs-list">
+          <li><span class="leaf-bullet">🌿</span> Dégradation des ressources naturelles, changement climatique, pression démographique et fragilité économique des exploitations.</li>
+          <li><span class="leaf-bullet">🌿</span> Érosion, perte de fertilité des sols, diminution de la couverture forestière, raréfaction de l'eau et augmentation des bioagresseurs.</li>
+          <li><span class="leaf-bullet">🌿</span> Difficultés d'accès aux services, aux moyens de production et aux débouchés pour les producteurs.</li>
+          <li><span class="leaf-bullet">🌿</span> Produire davantage ne suffit plus : il faut produire autrement, restaurer les ressources et renforcer la résilience des ménages ruraux.</li>
+        </ul>
+      </div>
+      <div class="apropos-visual reveal">
+        <div class="visual-blob">
+          <svg class="grow-tree" viewBox="0 0 120 140" width="90" height="105">
+            <path class="tree-trunk" d="M60 130 L60 78" stroke="#F7F3E9" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <path class="tree-branch tb-1" d="M60 100 C 45 92, 34 96, 26 82" stroke="#F7F3E9" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <path class="tree-branch tb-2" d="M60 90 C 75 82, 86 86, 94 72" stroke="#F7F3E9" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <path class="tree-branch tb-3" d="M60 78 C 50 66, 52 54, 44 40" stroke="#F7F3E9" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <path class="tree-branch tb-4" d="M60 78 C 70 66, 68 54, 78 42" stroke="#F7F3E9" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <circle class="tree-leaf tl-1" cx="26" cy="82" r="9"/>
+            <circle class="tree-leaf tl-2" cx="94" cy="72" r="9"/>
+            <circle class="tree-leaf tl-3" cx="44" cy="40" r="11"/>
+            <circle class="tree-leaf tl-4" cx="78" cy="42" r="11"/>
+            <circle class="tree-leaf tl-5" cx="60" cy="26" r="13"/>
+          </svg>
+        </div>
+        <div class="vision-card">
+          <h3>Notre vision</h3>
+          <p>Contribuer à un développement rural concret et durable, où les exploitations agricoles familiales améliorent leurs conditions de vie tout en préservant les ressources de leur avenir.</p>
+          <p class="vision-lead">Nous aspirons à :</p>
+          <ul class="vision-list">
+            <li>Réduire durablement la pauvreté et la vulnérabilité</li>
+            <li>Promouvoir des systèmes agricoles productifs, durables et résilients</li>
+            <li>Conserver et gérer rationnellement les ressources naturelles</li>
+            <li>Professionnaliser les producteurs et organisations paysannes</li>
+            <li>Rapprocher recherche, innovation et développement</li>
+            <li>Faciliter l'accès aux services, moyens de production et marchés</li>
+            <li>Impliquer les communautés dans la gestion durable de leurs territoires</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="where-block reveal">
+      <h3 class="apropos-subtitle">Où intervenons-nous ?</h3>
+      <p>
+        Nous intervenons sur l'ensemble du territoire de Madagascar, avec une attention particulière
+        pour les <strong>Hautes Terres</strong> et les <strong>régions du Sud</strong>. Nos actions s'adaptent aux réalités
+        agroécologiques, économiques, sociales et culturelles de chaque territoire.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACTIVITES ===================== -->
+<section class="section section-alt" id="activites">
+  <div class="section-inner">
+    <span class="section-tag">🎯 Notre mission</span>
+    <h2 class="section-title">Comment nous intervenons</h2>
+    <div class="growth-divider reveal" aria-hidden="true"><span></span></div>
+
+    <p class="mission-lead reveal">
+      Accompagner les communautés, les producteurs et les acteurs du développement dans la recherche
+      et la mise en œuvre de solutions adaptées, durables et porteuses d'améliorations concrètes.
+    </p>
+
+    <div class="mission-modes-grid">
+      <div class="mode-item reveal"><span class="mode-ico">🎓</span> Formation et renforcement des capacités</div>
+      <div class="mode-item reveal"><span class="mode-ico">📣</span> Information et sensibilisation</div>
+      <div class="mode-item reveal"><span class="mode-ico">🛠️</span> Accompagnement technique des producteurs et OP</div>
+      <div class="mode-item reveal"><span class="mode-ico">🚜</span> Facilitation de l'accès aux services agricoles</div>
+      <div class="mode-item reveal"><span class="mode-ico">💡</span> Expérimentation et promotion d'innovations adaptées</div>
+      <div class="mode-item reveal"><span class="mode-ico">🧑‍🤝‍🧑</span> Appui aux dynamiques locales et territoriales</div>
+      <div class="mode-item reveal"><span class="mode-ico">🔍</span> Diagnostics, études et expertises</div>
+      <div class="mode-item reveal"><span class="mode-ico">📋</span> Appui à la conception et à la mise en œuvre de projets</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REALISATIONS ===================== -->
+<section class="section" id="realisations">
+  <div class="section-inner">
+    <span class="section-tag">🏆 Nos domaines d'intervention</span>
+    <h2 class="section-title">Cinq domaines, une même vision</h2>
+    <div class="growth-divider reveal" aria-hidden="true"><span></span></div>
+
+    <div class="projects-grid domains-grid">
+      <div class="project-card reveal">
+        <div class="project-thumb"><img src="assets/domains/agriculture.jpeg" alt="Agriculture et agroécologie"></div>
+        <div class="project-body">
+          <h3>Agriculture et agroécologie</h3>
+          <p>Pratiques agroécologiques, amélioration des systèmes de production, CEP, fermes pilotes, élevage familial, innovations et résilience climatique.</p>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-thumb"><img src="assets/domains/environnement.jpeg" alt="Environnement et ressources naturelles"></div>
+        <div class="project-body">
+          <h3>Environnement &amp; ressources naturelles</h3>
+          <p>Reboisement, agroforesterie, gestion durable des sols et de l'eau, lutte contre l'érosion, biodiversité et mobilisation communautaire.</p>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-thumb"><img src="assets/domains/developpement-territorial.jpeg" alt="Développement territorial"></div>
+        <div class="project-body">
+          <h3>Développement territorial</h3>
+          <p>Diagnostics participatifs, identification des potentialités, appui aux dynamiques communautaires et planification locale.</p>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-thumb"><img src="assets/domains/renforcement-capacites.jpeg" alt="Renforcement des capacités et services"></div>
+        <div class="project-body">
+          <h3>Renforcement des capacités et services</h3>
+          <p>Formation, appui aux relais locaux, échanges, visites d'apprentissage, appui aux organisations et accès aux services, équipements et innovations.</p>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-thumb"><img src="assets/domains/etudes-expertises.jpeg" alt="Études et expertises"></div>
+        <div class="project-body">
+          <h3>Études et expertises</h3>
+          <p>Diagnostics, études, missions d'appui-conseil, évaluations et expertises dans les domaines du développement rural, de l'agroécologie et des ressources naturelles.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="approach-strip reveal">
+      <div class="approach-col">
+        <h3>Notre approche</h3>
+        <ul class="check-list">
+          <li>Participative et territoriale</li>
+          <li>Centrée sur l'humain</li>
+          <li>Agroécologique</li>
+          <li>Inclusive et sensible au genre</li>
+          <li>Fondée sur la qualité et la collaboration</li>
+        </ul>
+      </div>
+      <div class="approach-col">
+        <h3>Avec qui agissons-nous ?</h3>
+        <p>Producteurs, organisations paysannes, femmes et jeunes ruraux, prestataires de services, ONG, projets et programmes, partenaires techniques et financiers, services techniques, collectivités, institutions de recherche et de formation, bureaux d'études et consultants.</p>
+      </div>
+      <div class="approach-col">
+        <h3>Notre expérience</h3>
+        <p><strong>Plus de 19 années</strong> d'expérience cumulée dans le développement rural et l'agroécologie : accompagnement, transition agroécologique, diagnostics, projets, renforcement des capacités, gestion durable des ressources naturelles et animation de démarches participatives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PARTENARIATS ===================== -->
+<section class="section section-alt" id="partenariats">
+  <div class="section-inner">
+    <span class="section-tag">🤝 Ensemble, allons plus loin</span>
+    <h2 class="section-title">Partenariats &amp; collaborations</h2>
+    <div class="growth-divider reveal" aria-hidden="true"><span></span></div>
+
+    <div class="partners-layout">
+      <div class="partners-text reveal">
+        <p class="partners-lead">
+          Natior'Aro est ouverte aux partenariats avec les collectivités, services techniques,
+          organisations paysannes, ONG, projets et programmes, institutions de recherche,
+          bureaux d'études, consultants et partenaires techniques et financiers.
+        </p>
+        <p>
+          Convaincus qu'aucun développement rural durable ne se construit seul, nous privilégions
+          des collaborations fondées sur la confiance, la complémentarité des compétences et le
+          partage d'une même ambition : accompagner les communautés vers une agroécologie
+          concrète, résiliente et porteuse d'avenir.
+        </p>
+        <p>
+          Vous partagez ces valeurs et souhaitez construire un partenariat avec Natior'Aro ?
+          <a href="#contact" class="partners-cta">Contactez-nous →</a>
+        </p>
+      </div>
+      <div class="partners-visual reveal">
+        <img src="assets/partners/collaboration.jpeg" alt="Illustration d'une collaboration et d'un partenariat">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALERIE ===================== -->
+<section class="section section-alt" id="galerie">
+  <div class="section-inner">
+    <span class="section-tag">📸 Galerie</span>
+    <h2 class="section-title">Nos activités en images</h2>
+    <div class="growth-divider reveal" aria-hidden="true"><span></span></div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-photo reveal">
+        <img src="assets/gallery/formation-communautaire.jpg" alt="Séance de sensibilisation communautaire avec un support illustré" loading="lazy">
+        <p>Sensibilisation des communautés autour d'un support illustré</p>
+      </div>
+      <div class="gallery-photo reveal">
+        <img src="assets/gallery/preparation-substrat.jpg" alt="Préparation du substrat à la brouette" loading="lazy">
+        <p>Préparation du substrat pour la pépinière</p>
+      </div>
+      <div class="gallery-photo reveal">
+        <img src="assets/gallery/arrosage-pepiniere.jpg" alt="Arrosage des planches de pépinière" loading="lazy">
+        <p>Arrosage des planches de la pépinière communautaire</p>
+      </div>
+      <div class="gallery-photo reveal">
+        <img src="assets/gallery/equipe-pepiniere.jpg" alt="Équipe de la communauté devant la pépinière" loading="lazy">
+        <p>L'équipe communautaire devant la pépinière</p>
+      </div>
+      <div class="gallery-photo reveal">
+        <img src="assets/gallery/godets-plants.jpg" alt="Mise en place des godets de plants en pépinière" loading="lazy">
+        <p>Mise en place des godets de plants</p>
+      </div>
+      <div class="gallery-photo reveal">
+        <img src="assets/gallery/materiel-agricole.jpg" alt="Outils et matériel agricoles" loading="lazy">
+        <p>Outils et matériel agricoles mis à disposition</p>
+      </div>
+      <div class="gallery-photo reveal gallery-extra">
+        <img src="assets/gallery/semis-planche.jpg" alt="Semis sur une planche préparée" loading="lazy">
+        <p>Semis sur planche préparée</p>
+      </div>
+      <div class="gallery-photo reveal gallery-extra">
+        <img src="assets/gallery/formation-terrain.jpeg" alt="Séance de formation et sensibilisation avec des producteurs" loading="lazy">
+        <p>Formation et sensibilisation des producteurs sur le terrain</p>
+      </div>
+      <div class="gallery-photo reveal gallery-extra">
+        <img src="assets/gallery/terrain-degrade-1.jpeg" alt="Terrain dégradé et végétation clairsemée dans les Hautes Terres" loading="lazy">
+        <p>Ressources naturelles dégradées — Hautes Terres</p>
+      </div>
+      <div class="gallery-photo reveal gallery-extra">
+        <img src="assets/gallery/terrain-brule.jpeg" alt="Terres brûlées par les feux de brousse" loading="lazy">
+        <p>Terres brûlées par les feux de brousse</p>
+      </div>
+      <div class="gallery-photo reveal gallery-extra">
+        <img src="assets/gallery/hautes-terres.jpg" alt="Paysage des Hautes Terres de Madagascar au coucher du soleil" loading="lazy">
+        <p>Paysage des Hautes Terres, zone d'intervention</p>
+      </div>
+    </div>
+
+    <div class="gallery-more-wrap">
+      <button type="button" class="btn btn-outline" id="galleryMore" aria-expanded="false" data-more="Voir plus (5)" data-less="Voir moins">Voir plus (5)</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact">
+  <div class="contact-furrows" aria-hidden="true">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,40 C 240,90 480,10 720,60 C 960,110 1200,30 1440,70 L1440,0 L0,0 Z" class="furrow-top"/>
+    </svg>
+  </div>
+  <div class="section-inner contact-inner">
+    <span class="section-tag section-tag-light">📞 Contact</span>
+    <h2 class="section-title-light">Parlons de vos idées</h2>
+    <p class="contact-sub">Une question, une envie de rejoindre l'association, un partenariat ? Écrivez-nous.</p>
+
+    <div class="contact-grid">
+      <form class="contact-form reveal" id="contactForm">
+        <input type="text" placeholder="Votre nom" required>
+        <input type="email" placeholder="Votre email" required>
+        <textarea rows="5" placeholder="Votre message" required></textarea>
+        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+      </form>
+
+      <div class="contact-info reveal">
+        <div class="info-line">
+          <span class="c-ico"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2c-4.14 0-7.5 3.36-7.5 7.5 0 5.62 6.55 11.54 6.83 11.8a1 1 0 0 0 1.34 0c.28-.26 6.83-6.18 6.83-11.8C19.5 5.36 16.14 2 12 2Zm0 10.25a2.75 2.75 0 1 1 0-5.5 2.75 2.75 0 0 1 0 5.5Z"/></svg></span>
+          Soamananjafy, Ampokopa GOLF, Fokontany Ankofafalahy, Fianarantsoa 301, Madagascar
+        </div>
+        <a class="info-line info-line-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=natior_aro@yahoo.com" target="_blank" rel="noopener">
+          <span class="c-ico"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13Zm2.2.3 7.36 5.75a.7.7 0 0 0 .88 0L19.8 5.8a1 1 0 0 0-.3-.05H4.5a1 1 0 0 0-.3.05Zm15.8 1.6-7.02 5.49a2.7 2.7 0 0 1-3.36 0L4.6 7.4V18.5c0 .28.22.5.5.5h15a.5.5 0 0 0 .5-.5V7.4Z"/></svg></span>
+          natior_aro@yahoo.com
+        </a>
+        <div class="info-line info-line-phones">
+          <span class="c-ico"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.56.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.56a1 1 0 0 1-.25 1.02l-2.2 2.21Z"/></svg></span>
+          <a href="tel:+261321165111">032 11 651 11</a><span class="dot-sep">·</span><a href="tel:+261346862864">034 68 628 64</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.facebook.com/profile.php?id=61592697401584" target="_blank" rel="noopener" aria-label="Facebook" class="social-btn">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.23 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.23 22 17.08 22 12.06Z"/></svg>
+          </a>
+          <a href="https://wa.me/261321165111" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-btn">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.51 3.63 1.4 5.14L2 22l5.11-1.5a9.86 9.86 0 0 0 4.93 1.32h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.11h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.03.89.9-2.95-.2-.3a8.18 8.18 0 0 1-1.26-4.4c0-4.53 3.68-8.2 8.19-8.2 2.19 0 4.24.85 5.79 2.4a8.13 8.13 0 0 1 2.4 5.79c0 4.52-3.68 8.19-8.3 8.09Zm4.5-6.13c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.12-.56.12-.17.25-.65.8-.8.96-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.21-.73-.65-1.22-1.46-1.37-1.71-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.9 2.42 1.02 2.58c.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.jpeg" alt="Logo Natior'Aro" class="footer-logo">
+      <span>Natior'Aro</span>
+    </div>
+    <p>© 2026 Natior'Aro — Association d'agroécologie, Madagascar</p>
+    <p class="footer-tagline">Ensemble pour un développement rural durable et résilient, au service des générations futures.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
