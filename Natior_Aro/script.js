@@ -151,3 +151,36 @@ if (galleryGrid && galleryMore) {
     if (!expanded) document.getElementById('galerie').scrollIntoView({ behavior: 'smooth' });
   });
 }
+
+// ===================== E-MAIL : OUVRIR L'APPLI GMAIL SUR TÉLÉPHONE =====================
+// Sur PC : le lien Gmail web (href) reste inchangé. Sur téléphone : ouvre l'appli Gmail.
+(function () {
+  const mailLink = document.querySelector('a[href*="mail.google.com"]');
+  if (!mailLink) return;
+
+  const EMAIL = 'natior_aro@yahoo.com';
+  const ua = navigator.userAgent || '';
+  const isAndroid = /Android/i.test(ua);
+  const isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (!isAndroid && !isIOS) return; // PC : on ne touche à rien
+
+  mailLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const mailto = 'mailto:' + EMAIL;
+
+    if (isAndroid) {
+      // Intent Android ciblant directement l'appli Gmail, avec repli sur mailto
+      window.location.href =
+        'intent:' + mailto + '#Intent;scheme=mailto;package=com.google.android.gm;' +
+        'S.browser_fallback_url=' + encodeURIComponent(mailto) + ';end';
+    } else {
+      // iOS : schéma de l'appli Gmail (nouveau message), repli sur mailto si non installée
+      const t = setTimeout(() => { window.location.href = mailto; }, 900);
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) clearTimeout(t);
+      }, { once: true });
+      window.location.href = 'googlegmail:///co?to=' + encodeURIComponent(EMAIL);
+    }
+  });
+})();
